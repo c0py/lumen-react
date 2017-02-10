@@ -60,15 +60,10 @@ $app->singleton(
 */
 
 $app->middleware([
-    \LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class,
     \App\Http\Middleware\AccessLogMiddleware::class
 ]);
 
 $app->routeMiddleware([
-    'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
-    'oauth'                      => \LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware::class,
-    'oauth-client'               => \LucaDegasperi\OAuth2Server\Middleware\OAuthClientOwnerMiddleware::class,
-    'oauth-user'                 => \LucaDegasperi\OAuth2Server\Middleware\OAuthUserOwnerMiddleware::class,
 ]);
 
 /*
@@ -86,8 +81,6 @@ $app->routeMiddleware([
 //$app->register(App\Providers\AuthServiceProvider::class);
 $app->register(App\Providers\EventServiceProvider::class);
 $app->register(App\Providers\LogServiceProvider::class);
-$app->register(LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class);
-$app->register(LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class);
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(Jenssegers\Agent\AgentServiceProvider::class);
 $app->register(Illuminate\Mail\MailServiceProvider::class);
@@ -95,7 +88,6 @@ $app->register(Illuminate\Mail\MailServiceProvider::class);
 // Load the configs
 //$app->configure('mail');
 //$app->configure('services');
-$app->configure('oauth2');
 $app->configure('queue');
 
 /*
