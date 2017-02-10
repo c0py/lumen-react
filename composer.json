@@ -1,7 +1,7 @@
 {
-    "name": "mosufy/lumen-api",
+    "name": "c0py/lumen-react",
     "description": "API-Centric Architecture",
-    "keywords": ["api", "laravel", "lumen", "OAuth", "OAuth2"],
+    "keywords": ["api", "laravel", "lumen", "ldap"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -9,7 +9,7 @@
         "laravel/lumen-framework": "5.3.*",
         "vlucas/phpdotenv": "~2.2",
         "guzzlehttp/guzzle": "~6.0",
-        "lucadegasperi/oauth2-server-laravel": "^5.0",
+        "adldap2/adldap2-laravel": "2.0.*",
         "jenssegers/agent": "^2.3",
         "predis/predis": "^1.1",
         "illuminate/redis": "5.2.*",
